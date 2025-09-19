@@ -7,5 +7,7 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 export HF_HOME="/work3/s243891/huggingface/datasets"
 
+export HUGGING_FACE_HUB_TOKEN="REDACTED_HF_TOKEN"
+
 source ~/miniforge3/bin/activate
 conda activate HunyuanWorld
