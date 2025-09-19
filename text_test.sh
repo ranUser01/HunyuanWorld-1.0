@@ -30,19 +30,21 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 export HF_HOME="/work3/s243891/huggingface/datasets"
 
+
 source ~/miniforge3/bin/activate
 conda activate HunyuanWorld
 
 python3 demo_panogen.py \
-    --prompt "" \
-    --image_path /work3/s243891/examples/case2/input.png \
-    --output_path /work3/s243891/test_results/case2
+    --prompt "At the moment of glacier collapse, \
+            giant ice walls collapse and create waves, with no wildlife, \
+            captured in a disaster documentary" \
+    --output_path /work3/s243891/test_results/case7
 
 CUDA_VISIBLE_DEVICES=0 
 
 python3 demo_scenegen.py \
-    --image_path /work3/s243891/test_results/case2/panorama.png \
-    --labels_fg1 stones \
-    --labels_fg2 trees \
+    --image_path /work3/s243891/test_results/case7/panorama.png \
     --classes outdoor \
-    --output_path /work3/s243891/test_results/case2
+    --output_path /work3/s243891/test_results/case7
+
+
